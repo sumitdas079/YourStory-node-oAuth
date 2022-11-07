@@ -22,14 +22,13 @@ module.exports = {
             if (floating) {
                 return `<a href="/stories/edit/${storyId}" class="btn-floating halfway-fab blue"><i class="fa-solid fa-file-pen fa-small"></i></a>`
             } else {
-                return `<a href="/stories/edit/${storyId}"><i class="fa-solid fa-edit"></i></a>`
+                return `<a href="/stories/edit/${storyId}"><i class="fa-solid fa-file-pen"></i></a>`
             }
         } else {
             return ''
         }
     },
     select: function (selected, options) {
-        return options
-            .fn(this).replace(new RegExp(' value="' + selected + '"'), '$& selected="selected"').replace(new RegExp('>' + selected + '</option>'), ' selected="selected"$&')
+        return options.fn(this).replace(new RegExp(' value="' + selected + '"'), '$& selected="selected"').replace(new RegExp('>' + selected + '</option>'), ' selected="selected"$&')
     },
 }

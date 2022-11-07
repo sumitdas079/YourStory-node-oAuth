@@ -17,7 +17,17 @@
             <td><a href="/stories/{{_id}}">{{title}}</a></td>
             <td>{{formatDate createdAt "dddd, MMMM Do YYYY, h:mm:ss a"}}</td>
             <td><span class="dash-status">{{status}}</span></td>
-            <td></td>
+            <td>
+                <a href="/stories/edit/{{_id}}" class="btn btn-float">
+                    <i class="fa-solid fa-file-pen"></i>
+                </a>
+                <form action="/stories/{{_id}}" method="POST" id="delete-form">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button class="btn red" type="submit">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </form>
+            </td>
         </tr>
         {{/each}}
     </tbody>
